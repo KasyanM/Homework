@@ -2,20 +2,24 @@
 
 public class Urologist : Doctor
 {
-    public Urologist (string name, string surname, string specialization, int workExperience) : base(name, surname, specialization, workExperience)
+    public Urologist(string name, string surname, int workExperience, string specialization = "уролог") : base(name, surname, workExperience, specialization)
     {
-        specialization = "уролог";
+
     }
     public override void DisplayInfo()
     {
         base.DisplayInfo();
     }
-    public override void Cure (Patient ColoDis, Patient GynDis, Patient UroDis)
+    public override void Cure(Patient patient)
     {
-        if (UroDis)
+        if (patient.UroDis == true)
         {
-            UroDis = false;
-            Console.WriteLine("Проведено лечение урологической патологии");
+            patient.UroDis = false;
+            Console.WriteLine($"Проведено лечение урологической патологии пациенту {patient.Name} {patient.Surname}");
+        }
+        else
+        {
+            Console.WriteLine($"Урологическое лечение пациенту {patient.Name} {patient.Surname} не требуется");
         }
     }
 }

@@ -6,7 +6,7 @@ public abstract class Doctor : ICure
     public string Surname { get; set; }
     public string Specialization { get; set; }
     public int WorkExperience { get; set; }
-    public Doctor (string name, string surname, string specialization, int workExperience)
+    public Doctor (string name, string surname, int workExperience, string specialization)
     {
         Name = name;
         Surname = surname;
@@ -15,9 +15,9 @@ public abstract class Doctor : ICure
     }
     public virtual void DisplayInfo ()
     {
-        Console.WriteLine($"Врач-{Specialization} {Surname} {Name}, стаж работы - {WorkExperience}");
+        Console.WriteLine($"Врач-{Specialization} {Surname} {Name}, стаж работы - {WorkExperience} лет");
     }
-    public virtual void Cure (Patient ColoDis, Patient GynDis, Patient UroDis)
+    public virtual void Cure (Patient patient)
     {
 
     }

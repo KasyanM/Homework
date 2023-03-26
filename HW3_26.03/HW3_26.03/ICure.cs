@@ -2,5 +2,5 @@
 
 public interface ICure
 {
-    public void Cure(Patient ColoDis, Patient GynDis, Patient UroDis);
+    public void Cure(Patient patient);
 }

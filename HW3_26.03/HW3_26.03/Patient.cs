@@ -9,7 +9,7 @@ public class Patient
     public bool UroDis { get; set; }
     public bool ColoDis { get; set; }
 
-    public Patient(string name, string surname, int age, bool gynDis, bool uroDis, bool coloDis)
+    public Patient (string name, string surname, int age, bool gynDis, bool uroDis, bool coloDis)
     {
         Name = name;
         Surname = surname;
@@ -33,5 +33,6 @@ public class Patient
         {
             Console.WriteLine("Заболевание: колопроктологическая патология");
         }
+        Console.WriteLine("\n");
     }
 }   

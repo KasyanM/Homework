@@ -2,20 +2,25 @@
 
 public class Coloproctologist : Doctor
 {
-    public Coloproctologist (string name, string surname, string specialization, int workExperience) : base(name, surname, specialization, workExperience)
+    public Coloproctologist(string name, string surname, int workExperience, string specialization = "колопроктолог") : base(name, surname, workExperience, specialization)
     {
-        specialization = "колопроктолог";
+       
     }
+
     public override void DisplayInfo()
     {
         base.DisplayInfo();
     }
-    public override void Cure (Patient ColoDis, Patient GynDis, Patient UroDis)
+    public override void Cure (Patient patient)
     {
-        if (ColoDis == true)
+        if (patient.ColoDis == true)
         {
-            ColoDis = false;
+            patient.ColoDis = false;
+            Console.WriteLine($"Проведено лечение колопроктологической патологии пациенту {patient.Name} {patient.Surname}");
         }
-        Console.WriteLine("Проведено лечение колопроктологической патологии");
+        else
+        {
+            Console.WriteLine($"Колопроктологическое лечение пациенту {patient.Name} {patient.Surname} не требуется");
+        }
     }
 }

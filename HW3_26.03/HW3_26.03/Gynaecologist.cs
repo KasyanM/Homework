@@ -2,20 +2,24 @@
 
 public class Gynaecologist : Doctor
 {
-    public Gynaecologist (string name, string surname, string specialization, int workExperience) : base (name, surname, specialization, workExperience)
+    public Gynaecologist(string name, string surname, int workExperience, string specialization = "гинеколог") : base(name, surname, workExperience, specialization)
     {
-        specialization = "гинеколог";
+
     }
     public override void DisplayInfo()
     {
         base.DisplayInfo();
     }
-    public override void Cure (Patient ColoDis, Patient GynDis, Patient UroDis)
+    public override void Cure(Patient patient)
     {
-        if (GynDis)
+        if (patient.GynDis == true)
         {
-            GynDis = false;
-            Console.WriteLine("Проведено лечение гинекологической патологии");
+            patient.GynDis = false;
+            Console.WriteLine($"Проведено лечение гинекологическое патологии пациентке {patient.Name} {patient.Surname}");
+        }
+        else
+        {
+            Console.WriteLine($"Гинекологическое ечение пациенту {patient.Name} {patient.Surname} не требуется");
         }
     }
 }
